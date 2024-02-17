@@ -1,0 +1,18 @@
+https://tailwindcss.com/docs/guides/create-react-app
+
+feature 
+Login/Sign Up
+ -Sign In /Sign up Form
+ =Redirect browse page 
+Browse(after Authentication)
+  -Header 
+  -main move
+    -Trailer in Background 
+    -Tile adn description 
+    -Move suggestion 
+        -MoveList
+
+ -Netflix GPT
+    -Search Bar
+    -Movie suggestion       
+
