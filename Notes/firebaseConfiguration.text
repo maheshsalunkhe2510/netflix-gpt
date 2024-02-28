@@ -1,0 +1,87 @@
+PS E:\netflix-gpt\netfix-gpt> node -v
+v20.11.1
+PS E:\netflix-gpt\netfix-gpt> node -v
+v20.11.1
+PS E:\netflix-gpt\netfix-gpt> firebase login
+Already logged in as pratiksabale.it@gmail.com
+PS E:\netflix-gpt\netfix-gpt> firebase login list
+PS E:\netflix-gpt\netfix-gpt> firebase login:list
+Logged in as pratiksabale.it@gmail.com
+PS E:\netflix-gpt\netfix-gpt> firebase logout    
++  Logged out from pratiksabale.it@gmail.com
+PS E:\netflix-gpt\netfix-gpt> firebase login     
+i  Firebase optionally collects CLI and Emulator Suite usage and error reporting information to help improve our products. Data is collected in accordance with Google's privacy policy (https://policies.google.com/privacy) and is not used to identify you.
+
+? Allow Firebase to collect CLI and Emulator Suite usage and error reporting information? Yes
+i  To change your data collection preference at any time, run `firebase logout` and log in again.
+
+Visit this URL on this device to log in:
+https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=706492786&redirect_uri=http%3A%2F%2Flocalhost%3A9005
+
+Waiting for authentication...
+
++  Success! Logged in as maheshsalunkhe.it@gmail.com
+PS E:\netflix-gpt\netfix-gpt> firebase init
+
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  E:\netflix-gpt\netfix-gpt
+
+? Are you ready to proceed? Yes
+? Which Firebase features do you want to set up for this directory? Press Space to select features, then Enter to confirm your choices. Hosting: 
+Configure files for Firebase Hosting and (optionally) set up GitHub Action deploys
+
+=== Project Setup
+
+First, let's associate this project directory with a Firebase project.
+You can create multiple project aliases by running firebase use --add, 
+but for now we'll just set up a default project.
+
+? Please select an option: Use an existing project
+? Select a default Firebase project for this directory: netflixgpt-be7bd (NetflixGPT)
+i  Using project netflixgpt-be7bd (NetflixGPT)
+
+=== Hosting Setup
+
+Your public directory is the folder (relative to your project directory) that
+will contain Hosting assets to be uploaded with firebase deploy. If you
+have a build process for your assets, use your build's output directory.
+
+? What do you want to use as your public directory? build
+? Configure as a single-page app (rewrite all urls to /index.html)? No
+? Set up automatic builds and deploys with GitHub? No
++  Wrote build/404.html
++  Wrote build/index.html
+
+i  Writing configuration info to firebase.json...
+i  Writing project information to .firebaserc...
+
+build the project 
+firebase deploy
+PS E:\netflix-gpt\netfix-gpt> firebase deploy
+
+=== Deploying to 'netflixgpt-be7bd'...
+
+i  deploying hosting
+i  hosting[netflixgpt-be7bd]: beginning deploy...
+i  hosting[netflixgpt-be7bd]: found 14 files in build
++  hosting[netflixgpt-be7bd]: file upload complete
+i  hosting[netflixgpt-be7bd]: finalizing version...
++  hosting[netflixgpt-be7bd]: version finalized
+i  hosting[netflixgpt-be7bd]: releasing new version...
++  hosting[netflixgpt-be7bd]: release complete
+
++  Deploy complete!
+
+Project Console: https://console.firebase.google.com/project/netflixgpt-be7bd/overview
+Hosting URL: https://netflixgpt-be7bd.web.app
+PS E:\netflix-gpt\netfix-gpt> 
+ *  History restored 
+
+PS E:\netflix-gpt\netfix-gpt> 

@@ -22,3 +22,63 @@ Browse(after Authentication)
 
 Form validation 
   https://formik.org/ very good library to validation
+
+useRef => react Hook return the reference 
+use to reference  the tag 
+ It will create reference 
+ current.value
+ in from 
+ onSubmit=> e.preventDefault
+validate.js
+
+google Firebase used for authentication 
+
+https://console.firebase.google.com/?pli=1
+always use modular API
+
+create Fire base project 
+enable google analytic to deployed the application production 
+create web project => got web
+option available 
+Also set up Firebase Hosting for this app.
+click on register 
+Add Firebase sdk 
+npm install firebase
+give the configuration to connect the database 
+create file firebase.js and past the configuration
+https://firebase.google.com/docs/web/learn-more?hl=en&authuser=0&_gl=1*1bgbmi5*_ga*MTEzMjM3MTM5Mi4xNzA5MDUzNDky*_ga_CW55HF8NVT*MTcwOTA1NzM2MS4yLjEuMTcwOTA1Nzg1MC42MC4wLjA.#modular-version
+https://firebase.google.com/docs/reference/js/?hl=en&authuser=0&_gl=1*1wn45ap*_ga*MTEzMjM3MTM5Mi4xNzA5MDUzNDky*_ga_CW55HF8NVT*MTcwOTA1NzM2MS4yLjEuMTcwOTA1ODM0NS42MC4wLjA.
+
+Install Firebase CLI
+npm install -g firebase-tools
+Authentication
+  with email password
+  with gmail
+
+  Deploy to firebase 
+   Fire base login firebase login
+   getting error 
+   firebase : File C:\Users\sable\AppData\Roaming\npm\firebase.ps1 cannot be loaded because running scripts is disabled on this system. For more 
+    information, see about_Execution_Policies at https:/go.microsoft.com/fwlink/?LinkID=135170.
+    At line:1 char:1
+    + firebase login
+
+    open power cell 
+     run Get-ExecutionPolicy=> restricted 
+     Set-ExecutionPolicy RemoteSigned
+     Initiate your project
+      Run this command from your app's root directory:
+     firebase init
+       for select option press space and enter
+
+       Set Authentication on Firebase 
+       Note => Try to to enable the Email/Password provider using an incognito window, or try using a different supported browser
+       Use Web Modular API 
+       const auth = getAuth(); is require every where we should keep it one place to use
+       event lister =>onAuthStateChange => Firebase
+       Manage user auth change=> sign in sign out sign up 
+       write it on root level 
+       it should call only once => add in useEffect
+       write hook top of the script 
+       usNavigate()=> hook form react-router-dom
+       it should use inside router provider
