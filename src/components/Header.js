@@ -1,15 +1,38 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { signOut } from "firebase/auth";
 import { auth } from '../utils/firebase';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { onAuthStateChanged } from "firebase/auth";
+import { useDispatch } from 'react-redux';
+import { addUser, removeUser } from '../utils/userSlice';
+import { LOGO } from '../utils/constant';
 
 const Header = () => {
+    const dispatch = useDispatch();
     const user = useSelector(store => store.user);
     const navigate = useNavigate();
+    useEffect(() => {
+        let unSubscribe = onAuthStateChanged(auth, (user) => {
+            if (user) {
+                // User is signed in, see docs for a list of available properties
+                // https://firebase.google.com/docs/reference/js/auth.user
+                const { uid, displayName, email, photoURL } = user;
+                dispatch(addUser({ id: uid, displayName: displayName, email: email, photoURL: photoURL }));
+                navigate('/browse');
+            } else {
+                // User is signed out
+                dispatch(removeUser());
+                navigate('/');
+            }
+        });
+        return () => {
+            unSubscribe();
+        };
+    }, [])
     const handleSignOut = () => {
         signOut(auth).then(() => {
-            navigate('/');
+
             // Sign-out successful.
         }).catch((error) => {
             navigate('/error')
@@ -20,17 +43,19 @@ const Header = () => {
             <div>
                 <img
                     className='w-40'
-                    src='https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png'
+                    src={LOGO}
                     alt='Logo'
                 >
                 </img >
             </div>
             {user && (<div className='flex p-2'>
-                <img alt='user'
-                    src={user.photoURL}
-                    className='w-16'
-                >
-                </img>
+                <div className='p-2'>
+                    <img alt='user'
+                        src={user.photoURL}
+
+                    >
+                    </img>
+                </div>
                 <button className='text-white text-lg font-bold'
                     onClick={handleSignOut}
                 >Sign Out</button>

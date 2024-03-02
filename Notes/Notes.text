@@ -82,3 +82,18 @@ Authentication
        write hook top of the script 
        usNavigate()=> hook form react-router-dom
        it should use inside router provider
+-----------------------------------------
+function component unload 
+  return function in useEffect
+
+  call two time because of react of strict mode 
+  check inconstancy in rendering cycle it runs only in development environment  
+  movieSlice
+  addNowPlayingMove
+  useNowPlayingMovies =>hook
+  early return when data loaded 
+  rafce
+  MainContainer 
+    video Background
+    video title
+  secondary container 
